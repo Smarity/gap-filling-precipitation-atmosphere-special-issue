@@ -6,7 +6,7 @@ def rmse(x, y):
 
     Input:
         * x -> list or array of measured/actual data. For example,
-        in terms of et0, it would be FAO56-PM et0.
+        in terms of et0, it would be FAO56-PM ET0.
 
         * y -> list or array of predicted values. For example, in
         terms of et0, it would be the predicted et0 by a neural
