@@ -18,7 +18,7 @@ conf = [
 data_output = data[conf[-1]]
 data_input = data.filter(items=conf[:-1])
 
-scaler = pickle.load(open('scalers\scaler__ARJONA.pkl', 'rb'))
+scaler = pickle.load(open('scalers/scaler__ARJONA.pkl', 'rb'))
 data_input_scaled = scaler.transform(data_input)
 
 y_pred = np.array(model.predict(data_input_scaled))

@@ -2,10 +2,11 @@
 import pandas as pd
 import numpy as np
 import pickle
+import tensorflow as tf
 
 from rmse import rmse
 
-model = pickle.load(open("models/mlp__ARJONA.sav", 'rb'))
+model = tf.keras.models.load_model("models/mlp__ARJONA.sav")
 
 data = pd.read_excel("data/inland-example-data.xlsx")
 
@@ -27,7 +28,7 @@ conf = [
 data_output = data[conf[-1]]
 data_input = data.filter(items=conf[:-1])
 
-scaler = pickle.load(open('scalers\scaler__ARJONA.pkl', 'rb'))
+scaler = pickle.load(open('scalers/scaler__ARJONA.pkl', 'rb'))
 data_input_scaled = scaler.transform(data_input)
 
 y_pred = np.array(model.predict(data_input_scaled))
